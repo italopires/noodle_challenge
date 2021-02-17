@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :instant_noodle_times, only: [] do
+    resources :hourglass1, only: [] do
+      resources :hourglass2, only: [:show], controller: 'instant_noodle_times'
+    end
+  end
 end
