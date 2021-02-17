@@ -1,8 +1,8 @@
 class InstantNoodleGenerator
   def initialize(miojo_time, hourglass1, hourglass2)
-    @miojo_time = miojo_time
-    @hourglass1 = hourglass1
-    @hourglass2 = hourglass2
+    @miojo_time = miojo_time.to_i
+    @hourglass1 = hourglass1.to_i
+    @hourglass2 = hourglass2.to_i
     @glass1 = 0
     @glass2 = 0
     @total_time = 0
