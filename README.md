@@ -1,24 +1,63 @@
-# README
+# Noodle Challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+João é um fanático por "miojos"; ele os adora, e, como era de se esperar, ele levou vários pacotes quando foi acampar com seus colegas. Como João só gosta de miojos feitos com o tempo exato, ele se deseperou ao perceber que havia esquecido seu relógio em casa.
 
-Things you may want to cover:
+Por sorte, ele conseguiu, no caminho, comprar duas ampulhetas de durações diferentes. Por exemplo, se o miojo precisa de 3 minutos para ficar pronto, e João tiver uma ampulheta de 5 minutos e outra de 7, uma possível forma de cozinhar o miojo é:
+* João começa virando as duas ampulhetas ao mesmo tempo.
+* Quando a areia da ampulheta de 5 minutos se esgotar, João torna a virá-la.
+* João começa a preparar o miojo quando a areia da ampulheta de 7 minutos acabar.
+* João tira o miojo do fogo quando a ampulheta de 5 minutos acabar novamente.
+* Dessa forma, o miojo ficará 3 minutos no fogo (do minuto 7 ao minuto 10). Assim, apesar do miojo levar apenas três minutos para ser cozido, ele precisa de 10 minutos para ficar pronto.
 
-* Ruby version
+Faça um programa que, dado o tempo de preparo do miojo, e os tempos das duas ampulhetas (ambos maiores que o tempo do miojo), determina o tempo mínimo necessário para o miojo ficar pronto ou se não é possível cozinhar o miojo no tempo exato com as ampulhetas disponíveis.
 
-* System dependencies
+## Dependencies
+* rails 6.1.2.1
+* ruby 3.0.0
 
-* Configuration
+## Start rails server
+```
+rails s
+```
 
-* Database creation
+## Using API to get preparation time
 
-* Database initialization
+**Show Preparation Time**
+----
+  Returns json data about a preparation time of noodle
 
-* How to run the test suite
+* **URL**
 
-* Services (job queues, cache servers, search engines, etc.)
+  /instant_noodle_times/:instant_noodle_time_id/hourglass1/:hourglass1_id/hourglass2/:id
 
-* Deployment instructions
+* **Method:**
 
-* ...
+  `GET`
+  
+*  **URL Params**
+
+   **Required:**
+ 
+   `instant_noodle_time_id=[integer]`
+   `hourglass1_id=[integer]`
+   `id=[integer]`
+
+* **Data Params**
+
+  None
+
+* **Response:**
+
+  * **Code:** 200 <br />
+    **Content:** `{ preparation_time : 10 }`
+
+* **Sample Call:**
+
+  ```
+  localhost:3000/instant_noodle_times/3/hourglass1/5/hourglass2/7
+  ```
+
+## To run the tests, execute the bellow command
+```
+rspec
+```
